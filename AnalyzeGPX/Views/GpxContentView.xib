@@ -34,7 +34,7 @@
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn identifier="columnHeader" width="257" minWidth="40" maxWidth="1000" id="nmn-Vw-5MH">
+                                            <tableColumn width="257" minWidth="40" maxWidth="1000" id="nmn-Vw-5MH">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Routes">
                                                     <font key="font" metaFont="label" size="11"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -65,7 +65,7 @@
                                                             <outlet property="textField" destination="5bl-WC-sg2" id="W63-Lj-W30"/>
                                                         </connections>
                                                     </tableCellView>
-                                                    <textField identifier="fileName" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GIy-z5-KnX">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GIy-z5-KnX">
                                                         <rect key="frame" x="1" y="45" width="257" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="7Hk-ja-Q7A">
@@ -117,7 +117,7 @@
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn identifier="columnHeader" width="256" minWidth="40" maxWidth="1000" id="fQY-dF-dj8">
+                                            <tableColumn width="256" minWidth="40" maxWidth="1000" id="fQY-dF-dj8">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Waypoints">
                                                     <font key="font" metaFont="label" size="11"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -191,7 +191,7 @@
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn identifier="columnHeader" width="256" minWidth="40" maxWidth="1000" id="C5f-M7-7xz">
+                                            <tableColumn width="256" minWidth="40" maxWidth="1000" id="C5f-M7-7xz">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Tracks">
                                                     <font key="font" metaFont="label" size="11"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
