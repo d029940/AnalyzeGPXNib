@@ -56,6 +56,7 @@ class GpxContentView: NSView, LoadableView {
 
     // MARK:- Methods
 
+    @discardableResult
     func fillTables(with filename: URL) -> Bool {
         
         // clear current table view contents

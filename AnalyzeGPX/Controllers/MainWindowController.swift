@@ -18,7 +18,7 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var tabView: NSTabView!
     
     // MARK: - Views managed by this controller
-    var emptyView: Empty?
+    var devicesView: DevicesView?
     var gpxContentView: GpxContentView?
     
 
@@ -31,16 +31,16 @@ class MainWindowController: NSWindowController {
         var index = tabView.indexOfTabViewItem(withIdentifier: "Devices")
         if index != NSNotFound {
             if let devicesTabView = tabView.tabViewItem(at: index).view {
-                emptyView = Empty()
-                emptyView?.add(toView: devicesTabView)
+                devicesView = DevicesView()
+                devicesView?.add(toView: devicesTabView)
             }
         }
         index = tabView.indexOfTabViewItem(withIdentifier: "List of GPX files")
         if index != NSNotFound {
-            if let listGpxTabView = tabView.tabViewItem(at: index).view {
-                emptyView = Empty()
-                emptyView?.add(toView: listGpxTabView)
-            }
+//            if let listGpxTabView = tabView.tabViewItem(at: index).view {
+//                devicesView = DevicesView()
+//                devicesView?.add(toView: listGpxTabView)
+//            }
         }
         index = tabView.indexOfTabViewItem(withIdentifier: "GPX Content file")
         if index != NSNotFound {
@@ -67,15 +67,24 @@ class MainWindowController: NSWindowController {
                 return
             }
             guard let gpxContentView = gpxContentView else { return }
-            if gpxContentView.fillTables(with: filename) == true {
-                let index = tabView.indexOfTabViewItem(withIdentifier: "GPX Content file")
-                if index == NSNotFound { return }
-                tabView.selectTabViewItem(at: index)
-            }
+//            if gpxContentView.fillTables(with: filename) == true {
+//                let index = tabView.indexOfTabViewItem(withIdentifier: "GPX Content file")
+//                if index == NSNotFound { return }
+//                tabView.selectTabViewItem(at: index)
+//            }
+            gpxContentView.fillTables(with: filename)
+            let index = tabView.indexOfTabViewItem(withIdentifier: "GPX Content file")
+            if index == NSNotFound { return }
+            tabView.selectTabViewItem(at: index)
         }
     }
     
     @IBAction func loadDevice(_ sender: NSButton) {
+        guard let devicesView = devicesView else { return }
+        devicesView.loadGarminDevices()
+        let index = tabView.indexOfTabViewItem(withIdentifier: "Devices")
+        if index == NSNotFound { return }
+        tabView.selectTabViewItem(at: index)
     }
     
     @IBAction func exit(_ sender: NSButton) {

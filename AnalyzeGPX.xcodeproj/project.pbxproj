@@ -16,8 +16,8 @@
 		63EE32A423D8E4490095FFA9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32A323D8E4490095FFA9 /* MainWindow.xib */; };
 		63EE32A723D8ED5D0095FFA9 /* GpxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */; };
 		63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */; };
-		63EE32B123D8F3870095FFA9 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32AF23D8F3870095FFA9 /* Empty.swift */; };
-		63EE32B223D8F3870095FFA9 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32B023D8F3870095FFA9 /* Empty.xib */; };
+		63EE32B123D8F3870095FFA9 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32AF23D8F3870095FFA9 /* DevicesView.swift */; };
+		63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32B023D8F3870095FFA9 /* DevicesView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 		63EE32A323D8E4490095FFA9 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpxContentView.swift; sourceTree = "<group>"; };
 		63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GpxContentView.xib; sourceTree = "<group>"; };
-		63EE32AF23D8F3870095FFA9 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
-		63EE32B023D8F3870095FFA9 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
+		63EE32AF23D8F3870095FFA9 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		63EE32B023D8F3870095FFA9 /* DevicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevicesView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */,
-				63EE32B023D8F3870095FFA9 /* Empty.xib */,
+				63EE32B023D8F3870095FFA9 /* DevicesView.xib */,
 				63EE32A323D8E4490095FFA9 /* MainWindow.xib */,
 				63EE329423D8E28A0095FFA9 /* MainMenu.xib */,
 			);
@@ -109,8 +109,8 @@
 		63EE32A023D8E3710095FFA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63EE32AF23D8F3870095FFA9 /* DevicesView.swift */,
 				63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */,
-				63EE32AF23D8F3870095FFA9 /* Empty.swift */,
 				63EE32A123D8E3A50095FFA9 /* MainWindowController.swift */,
 			);
 			path = Controllers;
@@ -174,7 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EE32B223D8F3870095FFA9 /* Empty.xib in Resources */,
+				63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */,
 				63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */,
 				63EE329323D8E28A0095FFA9 /* Assets.xcassets in Resources */,
 				63EE329623D8E28A0095FFA9 /* MainMenu.xib in Resources */,
@@ -191,7 +191,7 @@
 			files = (
 				63EE32A723D8ED5D0095FFA9 /* GpxContentView.swift in Sources */,
 				632F81EA23DCC7790023C9BB /* GarminGpx.swift in Sources */,
-				63EE32B123D8F3870095FFA9 /* Empty.swift in Sources */,
+				63EE32B123D8F3870095FFA9 /* DevicesView.swift in Sources */,
 				63A27CAB23DB555A00B3A674 /* LoadableView.swift in Sources */,
 				63EE32A223D8E3A50095FFA9 /* MainWindowController.swift in Sources */,
 				63EE329123D8E2870095FFA9 /* AppDelegate.swift in Sources */,
