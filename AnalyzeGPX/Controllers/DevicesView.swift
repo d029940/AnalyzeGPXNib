@@ -8,14 +8,18 @@
 
 import Cocoa
 
+// TODO: This class and corresponding XIB file no longer needed (since OutlineView)
 class DevicesView: NSView, LoadableView {
     
     // Confirm to Loadable protocol
     var mainView: NSView?
     
-    // Table model
-    typealias VolumeEntry = (path: String, name: String)
-    var listOfVolumes = [VolumeEntry]()
+//    // Table model
+//    typealias VolumeEntry = (path: String, name: String)
+//    var listOfVolumes = [VolumeEntry]()
+    
+    // Model
+     var listOfVolumes = GarminGpxFiles.listOfVolumes
 
     // MARK: - Outlets
     
@@ -34,25 +38,6 @@ class DevicesView: NSView, LoadableView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    // MARK: - Methods
-    func loadGarminDevices() {
-        self.listOfVolumes.removeAll()
-        guard let listOfVol = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: [.volumeLocalizedNameKey], options: [.skipHiddenVolumes]) else { return }
-
-        for url in listOfVol {
-            let nameOfDriveRes = try? url.resourceValues(forKeys: [.localizedNameKey])
-            let volEntry: VolumeEntry
-            volEntry.path = url.path
-            if let nameOfDrive = nameOfDriveRes?.localizedName {
-                volEntry.name = nameOfDrive
-            } else {
-                volEntry.name = ""
-            }
-            listOfVolumes.append(volEntry)
-        }
-        deviceListTableView.reloadData()
     }
 }
 
@@ -77,7 +62,8 @@ extension DevicesView: NSTableViewDelegate  {
                                                     owner: self) as? NSTableCellView else {
                                                         return nil
             }
-            cellView.textField?.stringValue = listOfVolumes[row].path
+//            cellView.textField?.stringValue = listOfVolumes[row].path
+            cellView.textField?.stringValue = listOfVolumes[row].path.absoluteString
             return cellView
         } else if col == "Name" {
             let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "name")

@@ -18,6 +18,8 @@
 		63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */; };
 		63EE32B123D8F3870095FFA9 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32AF23D8F3870095FFA9 /* DevicesView.swift */; };
 		63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32B023D8F3870095FFA9 /* DevicesView.xib */; };
+		63FA99E123EDD744000717AC /* FilesOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA99E023EDD744000717AC /* FilesOutlineView.swift */; };
+		63FFC74623F0ABC200DA7094 /* GarminGpxFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFC74523F0ABC200DA7094 /* GarminGpxFiles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GpxContentView.xib; sourceTree = "<group>"; };
 		63EE32AF23D8F3870095FFA9 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		63EE32B023D8F3870095FFA9 /* DevicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevicesView.xib; sourceTree = "<group>"; };
+		63FA99E023EDD744000717AC /* FilesOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilesOutlineView.swift; path = AnalyzeGPX/Views/FilesOutlineView.swift; sourceTree = SOURCE_ROOT; };
+		63FFC74523F0ABC200DA7094 /* GarminGpxFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarminGpxFiles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		632F81E823DCC73B0023C9BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63FFC74523F0ABC200DA7094 /* GarminGpxFiles.swift */,
 				632F81E923DCC7790023C9BB /* GarminGpx.swift */,
 			);
 			path = Model;
@@ -109,6 +114,7 @@
 		63EE32A023D8E3710095FFA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63FA99E023EDD744000717AC /* FilesOutlineView.swift */,
 				63EE32AF23D8F3870095FFA9 /* DevicesView.swift */,
 				63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */,
 				63EE32A123D8E3A50095FFA9 /* MainWindowController.swift */,
@@ -195,6 +201,8 @@
 				63A27CAB23DB555A00B3A674 /* LoadableView.swift in Sources */,
 				63EE32A223D8E3A50095FFA9 /* MainWindowController.swift in Sources */,
 				63EE329123D8E2870095FFA9 /* AppDelegate.swift in Sources */,
+				63FA99E123EDD744000717AC /* FilesOutlineView.swift in Sources */,
+				63FFC74623F0ABC200DA7094 /* GarminGpxFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

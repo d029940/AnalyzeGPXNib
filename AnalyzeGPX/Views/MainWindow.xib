@@ -7,7 +7,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
-                <outlet property="tabView" destination="oRj-Re-8td" id="bGt-h5-q6V"/>
+                <outlet property="filesOutlineView" destination="tfj-Qm-1jM" id="44e-LB-PJh"/>
+                <outlet property="gpxContentCustomView" destination="vu8-HU-ITS" id="ebg-Bx-qjx"/>
+                <outlet property="mainSplitVoew" destination="9Z9-9Y-pFT" id="ptK-W4-aoI"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -20,7 +22,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-br-b3l">
                         <rect key="frame" x="14" y="13" width="159" height="32"/>
@@ -42,33 +44,6 @@
                             <action selector="loadDevice:" target="-2" id="bbM-1e-22k"/>
                         </connections>
                     </button>
-                    <tabView initialItem="qu8-3J-UEw" translatesAutoresizingMaskIntoConstraints="NO" id="oRj-Re-8td">
-                        <rect key="frame" x="13" y="51" width="454" height="303"/>
-                        <font key="font" metaFont="system"/>
-                        <tabViewItems>
-                            <tabViewItem label="Devices" identifier="Devices" id="qu8-3J-UEw">
-                                <view key="view" identifier="Devices" id="ikh-co-7Q5">
-                                    <rect key="frame" x="10" y="33" width="434" height="257"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="List of GPX files" identifier="List of GPX files" id="tao-m3-Oah">
-                                <view key="view" id="bnp-Vf-jej">
-                                    <rect key="frame" x="10" y="33" width="434" height="257"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="Content of GPX file" identifier="GPX Content file" id="aob-bm-o1l">
-                                <view key="view" id="iko-7P-fpd">
-                                    <rect key="frame" x="10" y="33" width="434" height="257"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                            </tabViewItem>
-                        </tabViewItems>
-                        <connections>
-                            <outlet property="delegate" destination="-2" id="1Nm-T3-1tq"/>
-                        </connections>
-                    </tabView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EAp-sD-pRL">
                         <rect key="frame" x="320" y="13" width="146" height="32"/>
                         <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Euq-EG-qRY">
@@ -79,21 +54,101 @@
                             <action selector="exit:" target="-2" id="zlY-gX-II6"/>
                         </connections>
                     </button>
+                    <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Z9-9Y-pFT">
+                        <rect key="frame" x="20" y="61" width="440" height="279"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Mrz-JR-c0j" userLabel="FilesOutline  Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="cfr-7g-gbh">
+                                    <rect key="frame" x="1" y="0.0" width="138" height="278"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="42" rowSizeStyle="automatic" headerView="Haz-Sz-Jvo" viewBased="YES" indentationPerLevel="16" outlineTableColumn="d8w-Uq-eHO" id="tfj-Qm-1jM" customClass="FilesOutlineView" customModule="AnalyzeGPX" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="138" height="253"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="135" minWidth="40" maxWidth="1000" id="d8w-Uq-eHO">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="GPX Files">
+                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Rid-SD-fzP">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="Ngw-EM-H1B">
+                                                            <rect key="frame" x="1" y="1" width="135" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48d-jm-v9n">
+                                                                    <rect key="frame" x="0.0" y="25" width="135" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="tij-bL-CVV">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="Ngw-EM-H1B" name="value" keyPath="objectValue" id="pLM-kt-Id2"/>
+                                                                    </connections>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="48d-jm-v9n" id="h1n-q1-Dax"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </outlineView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="XNh-KR-UHy">
+                                    <rect key="frame" x="1" y="216" width="148" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PRB-9h-tnv">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="Haz-Sz-Jvo">
+                                    <rect key="frame" x="0.0" y="0.0" width="138" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <customView fixedFrame="YES" id="vu8-HU-ITS" userLabel="GPX Content View">
+                                <rect key="frame" x="150" y="0.0" width="290" height="279"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dcK-e0-636" firstAttribute="width" secondItem="EAp-sD-pRL" secondAttribute="width" id="26V-aw-Xc8"/>
                     <constraint firstAttribute="trailing" secondItem="EAp-sD-pRL" secondAttribute="trailing" constant="20" symbolic="YES" id="2Yd-RS-7rO"/>
-                    <constraint firstItem="9oC-br-b3l" firstAttribute="top" secondItem="oRj-Re-8td" secondAttribute="bottom" constant="20" symbolic="YES" id="E1e-CU-IF3"/>
+                    <constraint firstItem="9Z9-9Y-pFT" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="Hvd-SF-6dt"/>
                     <constraint firstItem="EAp-sD-pRL" firstAttribute="leading" secondItem="dcK-e0-636" secondAttribute="trailing" constant="12" symbolic="YES" id="I6t-kv-xlw"/>
                     <constraint firstAttribute="bottom" secondItem="EAp-sD-pRL" secondAttribute="bottom" constant="20" symbolic="YES" id="KBV-WC-xb3"/>
                     <constraint firstAttribute="bottom" secondItem="9oC-br-b3l" secondAttribute="bottom" constant="20" symbolic="YES" id="PYb-5g-9QI"/>
                     <constraint firstItem="9oC-br-b3l" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="U0T-Ic-xlC"/>
-                    <constraint firstAttribute="trailing" secondItem="oRj-Re-8td" secondAttribute="trailing" constant="20" symbolic="YES" id="XkU-CI-W5W"/>
-                    <constraint firstItem="oRj-Re-8td" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="YKA-rg-3Hd"/>
+                    <constraint firstAttribute="trailing" secondItem="9Z9-9Y-pFT" secondAttribute="trailing" constant="20" symbolic="YES" id="VcN-T5-C8w"/>
                     <constraint firstItem="dcK-e0-636" firstAttribute="leading" secondItem="9oC-br-b3l" secondAttribute="trailing" constant="12" symbolic="YES" id="Yf3-O8-O1k"/>
+                    <constraint firstItem="9oC-br-b3l" firstAttribute="top" secondItem="9Z9-9Y-pFT" secondAttribute="bottom" constant="20" symbolic="YES" id="bEH-bz-g5Y"/>
+                    <constraint firstItem="9Z9-9Y-pFT" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="bxk-hW-hV7"/>
                     <constraint firstAttribute="bottom" secondItem="dcK-e0-636" secondAttribute="bottom" constant="20" symbolic="YES" id="iEc-bY-lOt"/>
                     <constraint firstItem="9oC-br-b3l" firstAttribute="width" secondItem="dcK-e0-636" secondAttribute="width" multiplier="1.09709" id="ljY-9A-eSG"/>
-                    <constraint firstItem="oRj-Re-8td" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="12" symbolic="YES" id="oOf-DC-Vkh"/>
                 </constraints>
             </view>
             <connections>
