@@ -9,10 +9,11 @@
 import Cocoa
 
 // TODO: This class and corresponding XIB file no longer needed (since OutlineView)
-class DevicesView: NSView, LoadableView {
-    
-    // Confirm to Loadable protocol
+class DevicesView: NSView, MKLoadableView {
+
+    // MARK: - Conform to MKLoadable protocol
     var mainView: NSView?
+    var nibName: String = "DevicesView"
     
 //    // Table model
 //    typealias VolumeEntry = (path: String, name: String)
@@ -29,7 +30,7 @@ class DevicesView: NSView, LoadableView {
     override init(frame frameRect: NSRect) {
         super.init(frame: NSRect.zero)
         
-        guard load(fromNIBNamed: "DevicesView") else { return }
+        guard load() else { return }
         
         // Connect delegates to tableview
         deviceListTableView.delegate = self

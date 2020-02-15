@@ -1,19 +1,20 @@
 //
-//  GpxContentView.swift
+//  GpxContentSplitView.swift
 //  AnalyzeGPX
 //
-//  Created by Manfred on 22.01.20.
+//  Created by Manfred on 15.02.20.
 //  Copyright © 2020 Manfred Kern. All rights reserved.
 //
 
 import Cocoa
 
-class GpxContentView: NSView, MKLoadableView {
-
+class GpxContentSplitView: NSView, MKLoadableView {
+    
     // MARK: - Conform to MKLoadable protocol
     var mainView: NSView?
-    var nibName: String = "GpxContentView"
-
+    var nibName: String = "GpxContentSplitView"
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var tracksTableView: NSTableView!
     @IBOutlet weak var routesTableView: NSTableView!
@@ -26,7 +27,7 @@ class GpxContentView: NSView, MKLoadableView {
     private var tracksColumnTitle = ""
     private var routesColumnTitle = ""
     private var waypointsColumnTitle = ""
-
+    
     
     // MARK: - Start up
     
@@ -54,9 +55,9 @@ class GpxContentView: NSView, MKLoadableView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     // MARK:- Methods
-
+    
     @discardableResult
     func fillTables(with filename: URL) -> Bool {
         
@@ -90,21 +91,20 @@ class GpxContentView: NSView, MKLoadableView {
 }
 
 
-
 // MARK:- Extensions for NSTableView
 
-extension GpxContentView: NSTableViewDataSource {
+extension GpxContentSplitView: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         // There is only one column in the table
         let column = tableView.tableColumns[0]
         if tableView == tracksTableView {
             let count = garminGpx.tracks.count
-                if count == 0 {
-                    column.title = tracksColumnTitle
-                } else {
-                    column.title = "\(tracksColumnTitle) (\(count))"
-                }
+            if count == 0 {
+                column.title = tracksColumnTitle
+            } else {
+                column.title = "\(tracksColumnTitle) (\(count))"
+            }
             return count
         }
         if tableView == routesTableView {
@@ -129,7 +129,7 @@ extension GpxContentView: NSTableViewDataSource {
     }
 }
 
-extension GpxContentView: NSTableViewDelegate  {
+extension GpxContentSplitView: NSTableViewDelegate  {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let element: String
@@ -146,9 +146,10 @@ extension GpxContentView: NSTableViewDelegate  {
         let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "cell")
         guard let cellView = tableView.makeView(withIdentifier: cellIdentifier,
                                                 owner: self) as? NSTableCellView else {
-            return nil
+                                                    return nil
         }
         cellView.textField?.stringValue = element
         return cellView
     }
 }
+

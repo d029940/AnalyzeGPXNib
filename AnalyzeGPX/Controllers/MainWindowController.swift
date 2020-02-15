@@ -22,7 +22,8 @@ class MainWindowController: NSWindowController {
     
     // MARK: - Views managed by this controller
     var devicesView: DevicesView?
-    var gpxContentView: GpxContentView?
+//    var gpxContentView: GpxContentView?
+    var gpxContentView: GpxContentSplitView?
     
 
     // MARK: - Start up
@@ -30,7 +31,8 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        gpxContentView = GpxContentView()
+//        gpxContentView = GpxContentView()
+        gpxContentView = GpxContentSplitView()
         gpxContentView?.add(toView: gpxContentCustomView)
     }
     

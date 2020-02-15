@@ -1,5 +1,5 @@
 //
-//  LoadableView.swift
+//  MKLoadableView.swift
 //
 //  Created by Manfred Kern
 //  Based on LoadableView.swift from https://www.appcoda.com/macos-custom-views/
@@ -11,21 +11,25 @@ import Cocoa
 
 /** Loads a custom view from a NIB file
     Usage:
-    1. Call load on nib file to load
-    2. Add custom view from nib file to the parent view
+    0. Conform to protocol: create var mainWindow and set name of NIB to constant nibName
+    1. Add custom view from nib file to the parent view
+    2. Call load if view should be loaded
+
  */
-protocol LoadableView: class {
+protocol MKLoadableView: class {
     
     /// Stores the (first) top level view in the nib file
     var mainView: NSView? { get set }
     
+    ///nibName: The name of the nib file to load
+    var nibName: String { get }
+    
     /**
      Loads a nib file of a custom view
-     
-     - Parameter nibName: The name of the nib file to load
      - Returns: true if loaded successfully, otherwise false
      */
-    func load(fromNIBNamed nibName: String) -> Bool
+    @discardableResult
+    func load() -> Bool
     
     /**
      Adds the the loaded custom view to its parent view
@@ -34,12 +38,13 @@ protocol LoadableView: class {
     func add(toView parentView: NSView)
 }
 
-/// Default implementation for  LoadableView protocol
-extension LoadableView where Self: NSView {
+/// Default implementation for  MKLoadableView protocol
+extension MKLoadableView where Self: NSView {
     
-    func load(fromNIBNamed nibName: String) -> Bool {
+    @discardableResult
+    func load() -> Bool {
         var nibObjects: NSArray?
-        let nibName = NSNib.Name(stringLiteral: nibName)
+        let nibName = NSNib.Name(self.nibName)
         
         // Check if nib file exists and contains an NSView
         if Bundle.main.loadNibNamed(nibName, owner: self, topLevelObjects: &nibObjects) {

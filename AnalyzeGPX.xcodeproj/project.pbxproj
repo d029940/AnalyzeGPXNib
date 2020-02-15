@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		632F81EA23DCC7790023C9BB /* GarminGpx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F81E923DCC7790023C9BB /* GarminGpx.swift */; };
-		63A27CAB23DB555A00B3A674 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A27CAA23DB555A00B3A674 /* LoadableView.swift */; };
-		63EE329123D8E2870095FFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE329023D8E2870095FFA9 /* AppDelegate.swift */; };
+		63C19F3A23F8577700234CAF /* GpxContentSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C19F3923F8577700234CAF /* GpxContentSplitView.swift */; };
+		63C19F3C23F8584600234CAF /* MKLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C19F3B23F8584600234CAF /* MKLoadableView.swift */; };
+		63C19F3E23F85D8D00234CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C19F3D23F85D8D00234CAF /* AppDelegate.swift */; };
+		63E7FA0323F74FAF00AB0DE5 /* GpxContentSplitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E7FA0223F74FAF00AB0DE5 /* GpxContentSplitView.xib */; };
 		63EE329323D8E28A0095FFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63EE329223D8E28A0095FFA9 /* Assets.xcassets */; };
 		63EE329623D8E28A0095FFA9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE329423D8E28A0095FFA9 /* MainMenu.xib */; };
 		63EE32A223D8E3A50095FFA9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32A123D8E3A50095FFA9 /* MainWindowController.swift */; };
@@ -24,9 +26,11 @@
 
 /* Begin PBXFileReference section */
 		632F81E923DCC7790023C9BB /* GarminGpx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarminGpx.swift; sourceTree = "<group>"; };
-		63A27CAA23DB555A00B3A674 /* LoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
+		63C19F3923F8577700234CAF /* GpxContentSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GpxContentSplitView.swift; path = AnalyzeGPX/Views/GpxContentSplitView.swift; sourceTree = SOURCE_ROOT; };
+		63C19F3B23F8584600234CAF /* MKLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLoadableView.swift; sourceTree = "<group>"; };
+		63C19F3D23F85D8D00234CAF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63E7FA0223F74FAF00AB0DE5 /* GpxContentSplitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GpxContentSplitView.xib; sourceTree = "<group>"; };
 		63EE328D23D8E2870095FFA9 /* AnalyzeGPX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnalyzeGPX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		63EE329023D8E2870095FFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63EE329223D8E28A0095FFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63EE329523D8E28A0095FFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		63EE329723D8E28A0095FFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,8 +96,8 @@
 		63EE329E23D8E2AF0095FFA9 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				63EE329023D8E2870095FFA9 /* AppDelegate.swift */,
-				63A27CAA23DB555A00B3A674 /* LoadableView.swift */,
+				63C19F3D23F85D8D00234CAF /* AppDelegate.swift */,
+				63C19F3B23F8584600234CAF /* MKLoadableView.swift */,
 				63EE329723D8E28A0095FFA9 /* Info.plist */,
 				63EE329823D8E28A0095FFA9 /* AnalyzeGPX.entitlements */,
 			);
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */,
+				63E7FA0223F74FAF00AB0DE5 /* GpxContentSplitView.xib */,
 				63EE32B023D8F3870095FFA9 /* DevicesView.xib */,
 				63EE32A323D8E4490095FFA9 /* MainWindow.xib */,
 				63EE329423D8E28A0095FFA9 /* MainMenu.xib */,
@@ -114,6 +119,7 @@
 		63EE32A023D8E3710095FFA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63C19F3923F8577700234CAF /* GpxContentSplitView.swift */,
 				63FA99E023EDD744000717AC /* FilesOutlineView.swift */,
 				63EE32AF23D8F3870095FFA9 /* DevicesView.swift */,
 				63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */,
@@ -181,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */,
+				63E7FA0323F74FAF00AB0DE5 /* GpxContentSplitView.xib in Resources */,
 				63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */,
 				63EE329323D8E28A0095FFA9 /* Assets.xcassets in Resources */,
 				63EE329623D8E28A0095FFA9 /* MainMenu.xib in Resources */,
@@ -198,10 +205,11 @@
 				63EE32A723D8ED5D0095FFA9 /* GpxContentView.swift in Sources */,
 				632F81EA23DCC7790023C9BB /* GarminGpx.swift in Sources */,
 				63EE32B123D8F3870095FFA9 /* DevicesView.swift in Sources */,
-				63A27CAB23DB555A00B3A674 /* LoadableView.swift in Sources */,
+				63C19F3A23F8577700234CAF /* GpxContentSplitView.swift in Sources */,
 				63EE32A223D8E3A50095FFA9 /* MainWindowController.swift in Sources */,
-				63EE329123D8E2870095FFA9 /* AppDelegate.swift in Sources */,
 				63FA99E123EDD744000717AC /* FilesOutlineView.swift in Sources */,
+				63C19F3C23F8584600234CAF /* MKLoadableView.swift in Sources */,
+				63C19F3E23F85D8D00234CAF /* AppDelegate.swift in Sources */,
 				63FFC74623F0ABC200DA7094 /* GarminGpxFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
