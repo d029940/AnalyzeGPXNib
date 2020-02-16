@@ -12,5 +12,6 @@ On the right side ("GPX Content"), the content (routes, tracks, waypoints) of a 
 
 
 Technical details:
-This a MacOS App written in Swift using UI implemented with XIB (no storyboard)
+This a MacOS App written in Swift using UI implemented with XIB (no storyboard).
+The UI uses a split view in the main view.
 It is one of my first projects and I am still learning. There are certainly better ways for design and implementation.
