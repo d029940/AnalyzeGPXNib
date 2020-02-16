@@ -11,12 +11,7 @@ import Foundation
 class GarminGpxFiles{
     
     // MARK: - Propertiey
-    // Table model
-//    typealias VolumeEntry = (path: URL, name: String)
-//    static var listOfVolumes = [VolumeEntry]()
-//    
-//    static var listOfGpxFiles = [URL]()
-    
+
     // Item of a tree node
     struct VolFileItem {
         var name: String   // Name of volume or file
@@ -26,7 +21,6 @@ class GarminGpxFiles{
     typealias AllGpxFiles = [VolFileItem]
     static var allGpxFiles = [VolFileItem]()
     
-
     
     // MARK: - Methods
     
