@@ -10,7 +10,7 @@ import Cocoa
 
 class FilesOutlineView: NSOutlineView {
     
-    // MARK: - Start up
+    // MARK: - Lifecycle
     
     // Loading from NIB
     required init?(coder: NSCoder) {

@@ -12,8 +12,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var mainWindowController: MainWindowController?
-    var x: Int = 0
-
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         

@@ -29,7 +29,7 @@ class GpxContentSplitView: NSView, MKLoadableView {
     private var waypointsColumnTitle = ""
     
     
-    // MARK: - Start up
+    // MARK: - Lifecycle
     
     override init(frame frameRect: NSRect) {
         super.init(frame: NSRect.zero)

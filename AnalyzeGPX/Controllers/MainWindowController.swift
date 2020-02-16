@@ -27,7 +27,7 @@ class MainWindowController: NSWindowController {
     var gpxContentView: GpxContentSplitView?
     
 
-    // MARK: - Start up
+    // MARK: - Lifecycle
     
     override func windowDidLoad() {
         super.windowDidLoad()

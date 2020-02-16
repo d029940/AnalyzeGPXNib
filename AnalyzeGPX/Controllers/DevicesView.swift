@@ -20,7 +20,7 @@ class DevicesView: NSView, MKLoadableView {
     
     @IBOutlet weak var deviceListTableView: NSTableView!
     
-    // MARK: - Start up
+    // MARK: - Lifecycle
     override init(frame frameRect: NSRect) {
         super.init(frame: NSRect.zero)
         
