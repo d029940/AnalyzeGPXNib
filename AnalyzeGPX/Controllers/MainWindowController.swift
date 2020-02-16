@@ -14,6 +14,7 @@ class MainWindowController: NSWindowController {
         return "MainWindow"
     }
     
+    
     // MARK: - Outlets
     @IBOutlet weak var mainSplitVoew: NSSplitView!
     @IBOutlet weak var gpxContentCustomView: NSView!
@@ -35,6 +36,7 @@ class MainWindowController: NSWindowController {
         gpxContentView = GpxContentSplitView()
         gpxContentView?.add(toView: gpxContentCustomView)
     }
+    
     
     // MARK: - Actions
     

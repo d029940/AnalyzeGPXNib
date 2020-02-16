@@ -15,12 +15,6 @@ class DevicesView: NSView, MKLoadableView {
     var mainView: NSView?
     var nibName: String = "DevicesView"
     
-//    // Table model
-//    typealias VolumeEntry = (path: String, name: String)
-//    var listOfVolumes = [VolumeEntry]()
-    
-    // Model
-     var listOfVolumes = GarminGpxFiles.listOfVolumes
 
     // MARK: - Outlets
     
@@ -48,7 +42,7 @@ class DevicesView: NSView, MKLoadableView {
 extension DevicesView: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return listOfVolumes.count
+        return GarminGpxFiles.allGpxFiles.count
     }
 }
 
@@ -64,7 +58,7 @@ extension DevicesView: NSTableViewDelegate  {
                                                         return nil
             }
 //            cellView.textField?.stringValue = listOfVolumes[row].path
-            cellView.textField?.stringValue = listOfVolumes[row].path.absoluteString
+            cellView.textField?.stringValue = GarminGpxFiles.allGpxFiles[row].path.absoluteString
             return cellView
         } else if col == "Name" {
             let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "name")
@@ -72,7 +66,7 @@ extension DevicesView: NSTableViewDelegate  {
                                                     owner: self) as? NSTableCellView else {
                                                         return nil
             }
-            cellView.textField?.stringValue = listOfVolumes[row].name
+            cellView.textField?.stringValue = GarminGpxFiles.allGpxFiles[row].name
             return cellView
         } else {
             return nil
