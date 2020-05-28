@@ -26,6 +26,14 @@ class FilesOutlineView: NSOutlineView {
     
     /// Searches for all Garmin/GPX folder on all mounted volumes case-insensitively and add them to treeview view
     func loadGarminDevices() {
+        
+        // Clear all table views of GpxContentViewController
+        // --> Splitview Controller --> Mainview Controller
+        guard let mainWC = NSApplication.shared.mainWindow?.delegate as? MainWindowController
+            else { return }
+        guard let vc = mainWC.gpxContentView else { return }
+        vc.clearTables()
+        
         // collect devices/volumes which have GPX files in folder /Garmin/GPX
         let errors = GarminGpxFiles.loadGarminDevices()
         if errors.count > 0 {

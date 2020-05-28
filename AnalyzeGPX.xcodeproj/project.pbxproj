@@ -17,7 +17,6 @@
 		63EE32A223D8E3A50095FFA9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32A123D8E3A50095FFA9 /* MainWindowController.swift */; };
 		63EE32A423D8E4490095FFA9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32A323D8E4490095FFA9 /* MainWindow.xib */; };
 		63EE32A723D8ED5D0095FFA9 /* GpxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */; };
-		63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */; };
 		63EE32B123D8F3870095FFA9 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE32AF23D8F3870095FFA9 /* DevicesView.swift */; };
 		63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EE32B023D8F3870095FFA9 /* DevicesView.xib */; };
 		63FA99E123EDD744000717AC /* FilesOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA99E023EDD744000717AC /* FilesOutlineView.swift */; };
@@ -38,7 +37,6 @@
 		63EE32A123D8E3A50095FFA9 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		63EE32A323D8E4490095FFA9 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		63EE32A523D8ED5D0095FFA9 /* GpxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpxContentView.swift; sourceTree = "<group>"; };
-		63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GpxContentView.xib; sourceTree = "<group>"; };
 		63EE32AF23D8F3870095FFA9 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		63EE32B023D8F3870095FFA9 /* DevicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevicesView.xib; sourceTree = "<group>"; };
 		63FA99E023EDD744000717AC /* FilesOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilesOutlineView.swift; path = AnalyzeGPX/Views/FilesOutlineView.swift; sourceTree = SOURCE_ROOT; };
@@ -107,7 +105,6 @@
 		63EE329F23D8E30F0095FFA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				63EE32A623D8ED5D0095FFA9 /* GpxContentView.xib */,
 				63E7FA0223F74FAF00AB0DE5 /* GpxContentSplitView.xib */,
 				63EE32B023D8F3870095FFA9 /* DevicesView.xib */,
 				63EE32A323D8E4490095FFA9 /* MainWindow.xib */,
@@ -188,7 +185,6 @@
 			files = (
 				63EE32B223D8F3870095FFA9 /* DevicesView.xib in Resources */,
 				63E7FA0323F74FAF00AB0DE5 /* GpxContentSplitView.xib in Resources */,
-				63EE32A823D8ED5D0095FFA9 /* GpxContentView.xib in Resources */,
 				63EE329323D8E28A0095FFA9 /* Assets.xcassets in Resources */,
 				63EE329623D8E28A0095FFA9 /* MainMenu.xib in Resources */,
 				63EE32A423D8E4490095FFA9 /* MainWindow.xib in Resources */,

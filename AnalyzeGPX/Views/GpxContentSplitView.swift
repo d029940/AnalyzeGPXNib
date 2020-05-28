@@ -74,19 +74,21 @@ class GpxContentSplitView: NSView, MKLoadableView {
             // TDOD: Alert
             print("Unknown error")
         }
+        refreshView()
         
-        // if table (trk, rte, wpt) are empty, just return this to caller
-        if garminGpx.tracks.count == 0 &&
-            garminGpx.routes.count == 0 &&
-            garminGpx.waypoints.count == 0  {
-            return false
-        }
-        
+        return true
+    }
+    
+    
+    func clearTables() {
+        garminGpx.resetModel()
+        refreshView()
+    }
+    
+    func refreshView() {
         tracksTableView.reloadData()
         routesTableView.reloadData()
         waypointsTableView.reloadData()
-        
-        return true
     }
 }
 

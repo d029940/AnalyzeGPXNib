@@ -87,8 +87,13 @@ class GpxContentView: NSView, MKLoadableView {
         
         return true
     }
-}
+    
+    // MARK:- Actions for popover menu
 
+    @IBAction func deleteEntry(_sender: Any) {
+        print("Delete Entry")
+    }
+}
 
 
 // MARK:- Extensions for NSTableView
@@ -151,4 +156,5 @@ extension GpxContentView: NSTableViewDelegate  {
         cellView.textField?.stringValue = element
         return cellView
     }
+
 }

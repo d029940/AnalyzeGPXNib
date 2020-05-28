@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +40,6 @@
                                                 <tableColumns>
                                                     <tableColumn width="165" minWidth="40" maxWidth="1000" id="dgW-Mt-W25">
                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Routes">
-                                                            <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                         </tableHeaderCell>
@@ -72,6 +71,9 @@
                                                         </prototypeCellViews>
                                                     </tableColumn>
                                                 </tableColumns>
+                                                <connections>
+                                                    <outlet property="menu" destination="74z-wV-Q6c" id="PBR-mO-SUb"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                     </clipView>
@@ -115,7 +117,6 @@
                                                 <tableColumns>
                                                     <tableColumn width="165" minWidth="40" maxWidth="1000" id="Ig8-Wm-WXr">
                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Tracks">
-                                                            <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                         </tableHeaderCell>
@@ -147,6 +148,9 @@
                                                         </prototypeCellViews>
                                                     </tableColumn>
                                                 </tableColumns>
+                                                <connections>
+                                                    <outlet property="menu" destination="74z-wV-Q6c" id="8ss-0g-YZn"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                     </clipView>
@@ -190,7 +194,6 @@
                                                 <tableColumns>
                                                     <tableColumn width="166" minWidth="40" maxWidth="1000" id="LT3-xj-KEd">
                                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Waypoints">
-                                                            <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                         </tableHeaderCell>
@@ -222,6 +225,9 @@
                                                         </prototypeCellViews>
                                                     </tableColumn>
                                                 </tableColumns>
+                                                <connections>
+                                                    <outlet property="menu" destination="74z-wV-Q6c" id="oeS-LX-d27"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                     </clipView>
@@ -262,5 +268,16 @@
             </constraints>
             <point key="canvasLocation" x="134.5" y="78"/>
         </customView>
+        <menu id="74z-wV-Q6c" userLabel="Table Menu">
+            <items>
+                <menuItem title="Delete" id="Pa8-6D-s9c">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Change Name" id="skp-DA-b3j">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-237" y="86"/>
+        </menu>
     </objects>
 </document>
